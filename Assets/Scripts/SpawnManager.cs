@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject spawnEnemyPrefab;
-    public GameObject spawnLifePowerUp;
+    public GameObject[] spawnEnemyPrefab;
+    public GameObject[] spawnLifePowerUp;
     private int enemyPoolSize = 5;
     private int powerUpPoolSize = 2;
     public int enemyLife = 10;
@@ -26,8 +26,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        numberMaxOfEnemies = enemyPoolSize + 1; 
-        AddToPool(enemyPoolSize,spawnEnemyPrefab,pooledEnemies);
+        numberMaxOfEnemies = enemyPoolSize + 1;
+        AddToPool(enemyPoolSize, spawnEnemyPrefab,pooledEnemies);
         AddToPool(powerUpPoolSize,spawnLifePowerUp, pooledLives);
         StartCoroutine(GenerateCircleOfEnemies()); // comienza a instanciar enemigos
         StartCoroutine(GenerateLives()); // comienza a instanciar powerup
@@ -37,12 +37,13 @@ public class SpawnManager : MonoBehaviour
     /// </summary>  
     /// Método para adicionar un objeto al pool  
     /// </summary>  
-    void AddToPool(int poolSize, GameObject spawnObject, List<GameObject> listToFill)
+    void AddToPool(int poolSize, GameObject[] spawnObject, List<GameObject> listToFill)
     {
         for (int i = 0; i < poolSize; i++)
         {
+            int index = RandomNumber(spawnObject.Length);
             GameObject prefabObject;
-            prefabObject = Instantiate(spawnObject, Vector3.zero, Quaternion.identity);
+            prefabObject = Instantiate(spawnObject[index], Vector3.zero, Quaternion.identity);
             prefabObject.SetActive(false);
             listToFill.Add(prefabObject);
         }
@@ -51,7 +52,7 @@ public class SpawnManager : MonoBehaviour
     /// </summary>  
     /// Función que retorna el objeto disponible para su uso  
     /// </summary>  
-    private GameObject FirstDesactivate(List<GameObject> listToSearch, GameObject spawnObject)
+    private GameObject FirstDesactivate(List<GameObject> listToSearch, GameObject[] spawnObject)
     {
         for (int i = 0; i < listToSearch.Count; i++)
         {  
@@ -109,6 +110,10 @@ public class SpawnManager : MonoBehaviour
          return Random.Range(minRadius, maxRadius);
     }
 
+    int RandomNumber(int maxObject) 
+    {
+        return Random.Range(0, maxObject);
+    }
     Vector3 PositionInACircle(int actualNumber ,int numberOfObjects, float radius) 
     {
         float angle = actualNumber * (360f / numberOfObjects) * Mathf.Deg2Rad;
