@@ -54,7 +54,7 @@ public class PlatformController : MonoBehaviour
             Renderer renderer = aros[i].GetComponent<Renderer>();
             if (renderer != null)
             {
-                renderer.material.color = isSelected ? Color.yellow : Color.white;
+                renderer.material.color = isSelected ? Color.gray : Color.white;
             }
         }
 
