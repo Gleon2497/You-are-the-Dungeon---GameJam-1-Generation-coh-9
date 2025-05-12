@@ -4,72 +4,101 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-  //1public GameObject obstPrefab;
-    public GameObject[] obstPrefab;
-    [SerializeField] private List<GameObject> pooledObject = new List<GameObject>();
-    public int sizePool = 4;
-    private Vector3 spawnPosition = new Vector3(25, 0, 0);
-    private float startDelay = 2;
-    private float repeatRate = 2;
-   // private PlayerControllerCity playerControllerCity;
-    private GameObject objtemp;
+    public List<GameObject> aros;
+    private int currentIndex = 0;
+    public float rotationSpeed = 90f;
 
+    // Diccionario para almacenar los colores originales de cada material de cada aro
+    private Dictionary<GameObject, Color[]> originalColors = new Dictionary<GameObject, Color[]>();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       // playerControllerCity = GameObject.Find("Player").GetComponent<PlayerControllerCity>();
-        AddToPool(sizePool);
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    /// </summary> 
-    /// Método para adicionar un objeto a la piscina 
-    /// </summary> 
-    void AddToPool(int poolSize)
-    {
-        for (int i = 0; i < poolSize; i++)
+        // Guardar los colores originales de los materiales de cada aro
+        foreach (GameObject aro in aros)
         {
-            int randomIndex = Random.Range(0, obstPrefab.Length);
-            GameObject prefabPool;
-            objtemp = obstPrefab[randomIndex];
-            prefabPool = Instantiate(objtemp, Vector3.zero, Quaternion.identity);
-            prefabPool.SetActive(false);
-            pooledObject.Add(prefabPool);
-        }
-    }
-
-    /// </summary> 
-    /// Función que retorna el objeto disponible para su uso 
-    /// </summary> 
-    public GameObject FirstDesactivate()
-    {
-        for (int i = 0; i < pooledObject.Count; i++)
-        {
-            if (!pooledObject[i].activeInHierarchy)
+            Renderer renderer = aro.GetComponent<Renderer>();
+            if (renderer != null)
             {
-                return pooledObject[i];
+                Material[] materials = renderer.materials;
+                Color[] colors = new Color[materials.Length];
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    colors[i] = materials[i].color;
+                }
+                originalColors[aro] = colors;
             }
         }
-        AddToPool(1);
-        return pooledObject.Last<GameObject>();
+        UpdateSelection();
     }
-    //void SpawnObstacle()
-    //{
-    //    if (playerControllerCity.gameOver == false)
-    //    {
-    //        GameObject temporal = FirstDesactivate();
-    //        temporal.transform.position = spawnPosition;
-    //        temporal.SetActive(true);
-    //    }
-    //}
+
+    void Update()
+    {
+        // seleccion de aros
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (currentIndex < aros.Count - 1)
+            {
+                currentIndex++;
+                UpdateSelection();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (currentIndex > 0)
+            {
+                currentIndex--;
+                UpdateSelection();
+            }
+        }
+
+        // Rotación del aro seleccionado
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            RotateSelectedAro(-1); // sentido del relij
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            RotateSelectedAro(1); // sentido contrario al reloj
+        }
+    }
+
+    // Actualiza el color del aro seleccionado y restablece los colores originales de los demás
+    void UpdateSelection()
+    {
+        for (int i = 0; i < aros.Count; i++)
+        {
+            Renderer renderer = aros[i].GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                Material[] materials = renderer.materials;
+                for (int j = 0; j < materials.Length; j++)
+                {
+                    if (i == currentIndex)
+                    {
+                        // Color amarillo para el aro seleccionado
+                        materials[j].color = Color.grey;
+                    }
+                    else
+                    {
+                        // Restaurar color original
+                        materials[j].color = originalColors[aros[i]][j];
+                    }
+                }
+            }
+        }
+
+        Debug.Log("Aro seleccionado: #" + (currentIndex + 1));
+    }
+
+    // Rota el aro actualmente seleccionado en el eje Y
+    void RotateSelectedAro(int direction)
+    {
+        if (aros[currentIndex] != null)
+        {
+            aros[currentIndex].transform.Rotate(Vector3.up * direction * rotationSpeed * Time.deltaTime);
+        }
+    }
+
 
 }
 
