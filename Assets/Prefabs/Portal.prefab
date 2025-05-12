@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1978923228501807964}
   - component: {fileID: 6019208115901323286}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
