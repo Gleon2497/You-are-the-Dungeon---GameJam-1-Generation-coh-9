@@ -8,6 +8,7 @@ public class PlatformController : MonoBehaviour
     private int currentIndex = 0;
     public float rotationSpeed = 90f;
 
+    // Diccionario para almacenar los colores originales de cada material de cada aro
     private Dictionary<GameObject, Color[]> originalColors = new Dictionary<GameObject, Color[]>();
 
     void Start()
