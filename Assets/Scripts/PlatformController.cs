@@ -4,72 +4,71 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-  //1public GameObject obstPrefab;
-    public GameObject[] obstPrefab;
-    [SerializeField] private List<GameObject> pooledObject = new List<GameObject>();
-    public int sizePool = 4;
-    private Vector3 spawnPosition = new Vector3(25, 0, 0);
-    private float startDelay = 2;
-    private float repeatRate = 2;
-   // private PlayerControllerCity playerControllerCity;
-    private GameObject objtemp;
+    public List<GameObject> aros;
+    private int currentIndex = 0;
+    public float rotationSpeed = 90f;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       // playerControllerCity = GameObject.Find("Player").GetComponent<PlayerControllerCity>();
-        AddToPool(sizePool);
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
-
+        UpdateSelection();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-    }
-
-    /// </summary> 
-    /// Método para adicionar un objeto a la piscina 
-    /// </summary> 
-    void AddToPool(int poolSize)
-    {
-        for (int i = 0; i < poolSize; i++)
+        // seleccion de aros
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            int randomIndex = Random.Range(0, obstPrefab.Length);
-            GameObject prefabPool;
-            objtemp = obstPrefab[randomIndex];
-            prefabPool = Instantiate(objtemp, Vector3.zero, Quaternion.identity);
-            prefabPool.SetActive(false);
-            pooledObject.Add(prefabPool);
-        }
-    }
-
-    /// </summary> 
-    /// Función que retorna el objeto disponible para su uso 
-    /// </summary> 
-    public GameObject FirstDesactivate()
-    {
-        for (int i = 0; i < pooledObject.Count; i++)
-        {
-            if (!pooledObject[i].activeInHierarchy)
+            if (currentIndex < aros.Count - 1)
             {
-                return pooledObject[i];
+                currentIndex++;
+                UpdateSelection();
             }
         }
-        AddToPool(1);
-        return pooledObject.Last<GameObject>();
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (currentIndex > 0)
+            {
+                currentIndex--;
+                UpdateSelection();
+            }
+        }
+
+        // Rotación del aro seleccionado
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            RotateSelectedAro(-1); // sentido del relij
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            RotateSelectedAro(1); // sentido contrario al reloj
+        }
     }
-    //void SpawnObstacle()
-    //{
-    //    if (playerControllerCity.gameOver == false)
-    //    {
-    //        GameObject temporal = FirstDesactivate();
-    //        temporal.transform.position = spawnPosition;
-    //        temporal.SetActive(true);
-    //    }
-    //}
+
+    void UpdateSelection()
+    {
+        for (int i = 0; i < aros.Count; i++)
+        {
+            bool isSelected = (i == currentIndex);
+
+            // Ejemplo visual: color del aro seleccionado
+            Renderer renderer = aros[i].GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material.color = isSelected ? Color.yellow : Color.white;
+            }
+        }
+
+        Debug.Log("Aro seleccionado: #" + (currentIndex + 1));
+    }
+
+    void RotateSelectedAro(int direction)
+    {
+        if (aros[currentIndex] != null)
+        {
+            aros[currentIndex].transform.Rotate(Vector3.up * direction * rotationSpeed * Time.deltaTime);
+        }
+    }
+
 
 }
 
