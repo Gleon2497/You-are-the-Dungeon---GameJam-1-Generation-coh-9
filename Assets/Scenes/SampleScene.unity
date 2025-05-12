@@ -945,7 +945,7 @@ MonoBehaviour:
   spawnLifePowerUp:
   - {fileID: 944427505743814590, guid: ab64091a9db9d5e4196753790b13638a, type: 3}
   enemyLife: 10
-  centerPoint: {fileID: 0}
+  centerPoint: {fileID: 789431042}
   pooledEnemies: []
   pooledLives: []
   isGameActive: 1
