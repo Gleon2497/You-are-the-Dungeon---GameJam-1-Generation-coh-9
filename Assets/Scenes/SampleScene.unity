@@ -518,6 +518,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1676049032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1676049033}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1676049033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676049032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.29739362, y: 1.3845693, z: -1.7462552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730805913
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1730805914}
+  - component: {fileID: 1730805915}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -550,6 +582,28 @@ Transform:
   - {fileID: 789431042}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1730805915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730805913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f411132b3a377444ab0df78c2fd45984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnEnemyPrefab:
+  - {fileID: 6540417587282102957, guid: d127ca83d28b0484284b8fd8df136531, type: 3}
+  - {fileID: 943597118041586915, guid: 3039b2fdf3547dc4eb9d436967f21059, type: 3}
+  spawnLifePowerUp:
+  - {fileID: 944427505743814590, guid: ab64091a9db9d5e4196753790b13638a, type: 3}
+  enemyLife: 10
+  centerPoint: {fileID: 0}
+  pooledEnemies: []
+  pooledLives: []
+  isGameActive: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -559,3 +613,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 276058462}
   - {fileID: 1730805914}
+  - {fileID: 1676049033}
