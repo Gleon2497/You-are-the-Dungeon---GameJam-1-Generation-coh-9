@@ -11,14 +11,14 @@ public class PlatformController : MonoBehaviour
     private Vector3 spawnPosition = new Vector3(25, 0, 0);
     private float startDelay = 2;
     private float repeatRate = 2;
-    //private PlayerControllerCity playerControllerCity;
+   // private PlayerControllerCity playerControllerCity;
     private GameObject objtemp;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerControllerCity = GameObject.Find("Player").GetComponent<PlayerControllerCity>();
+       // playerControllerCity = GameObject.Find("Player").GetComponent<PlayerControllerCity>();
         AddToPool(sizePool);
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
 
@@ -61,15 +61,15 @@ public class PlatformController : MonoBehaviour
         AddToPool(1);
         return pooledObject.Last<GameObject>();
     }
-    void SpawnObstacle()
-    {
-        if (playerControllerCity.gameOver == false)
-        {
-            GameObject temporal = FirstDesactivate();
-            temporal.transform.position = spawnPosition;
-            temporal.SetActive(true);
-        }
-    }
+    //void SpawnObstacle()
+    //{
+    //    if (playerControllerCity.gameOver == false)
+    //    {
+    //        GameObject temporal = FirstDesactivate();
+    //        temporal.transform.position = spawnPosition;
+    //        temporal.SetActive(true);
+    //    }
+    //}
 
 }
 
