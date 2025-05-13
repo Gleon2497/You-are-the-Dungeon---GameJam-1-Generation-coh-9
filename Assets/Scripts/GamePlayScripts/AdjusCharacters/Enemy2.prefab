@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerPoint: {fileID: 0}
   speed: 1
+  enemyOnVoidSound: {fileID: 8300000, guid: 5c8e8fc23a60cc54f87541c4f0bf572c, type: 3}
 --- !u!1001 &7095228982796955014
 PrefabInstance:
   m_ObjectHideFlags: 0

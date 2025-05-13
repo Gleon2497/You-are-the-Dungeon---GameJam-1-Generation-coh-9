@@ -4,6 +4,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public Transform centerPoint;
     public float speed = 5f;
+    public AudioClip enemyOnVoidSound;
 
     private Manager_Level managerLv;
 
@@ -30,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
             managerLv.Damage();
+            AudioManager.Instance.PlaySFX(enemyOnVoidSound);
         }
     }
 }

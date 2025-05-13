@@ -4,6 +4,7 @@ public class FriendMovement : MonoBehaviour
 {
     public Transform centerPoint;
     public float speed = 5f;
+    public AudioClip friendInVoidSound;
 
     private Manager_Level managerLv;
 
@@ -30,6 +31,7 @@ public class FriendMovement : MonoBehaviour
         {
             Destroy(gameObject);
             managerLv.Healp();
+            AudioManager.Instance.PlaySFX(friendInVoidSound);
         }
     }
 }

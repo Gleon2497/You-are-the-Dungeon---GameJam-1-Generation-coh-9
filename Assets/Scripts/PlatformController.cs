@@ -7,6 +7,7 @@ public class PlatformController : MonoBehaviour
     public List<GameObject> aros;
     private int currentIndex = 0;
     public float rotationSpeed = 90f;
+    public AudioClip changeRingSound;
 
     // Diccionario para almacenar los colores originales de cada material de cada aro
     private Dictionary<GameObject, Color[]> originalColors = new Dictionary<GameObject, Color[]>();
@@ -40,6 +41,7 @@ public class PlatformController : MonoBehaviour
             {
                 currentIndex++;
                 UpdateSelection();
+                AudioManager.Instance.PlaySFX(changeRingSound);
             }
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -48,13 +50,14 @@ public class PlatformController : MonoBehaviour
             {
                 currentIndex--;
                 UpdateSelection();
+                AudioManager.Instance.PlaySFX(changeRingSound);
             }
         }
 
         // Rotación del aro seleccionado
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            RotateSelectedAro(-1); // sentido del relij
+            RotateSelectedAro(-1); // sentido del reloj
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
