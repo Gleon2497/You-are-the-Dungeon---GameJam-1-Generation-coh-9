@@ -89,8 +89,6 @@ public class PlatformController : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("Aro seleccionado: #" + (currentIndex + 1));
     }
 
     // Rota el aro actualmente seleccionado en el eje Y
