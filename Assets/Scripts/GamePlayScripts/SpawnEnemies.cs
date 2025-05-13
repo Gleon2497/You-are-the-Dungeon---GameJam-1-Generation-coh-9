@@ -13,12 +13,6 @@ public class SpawnEnemies : MonoBehaviour
     {
         InvokeRepeating("SpawnPrefabEnemies", startDelay, repeatRate);
     }
-
-    void Update()
-    {
-        
-    }
-
     void SpawnPrefabEnemies()
     {
         Vector3 spawnPos = new Vector3(spawnPosX, 0, Random.Range(-spawnPosZ, spawnPosZ));

@@ -78,7 +78,7 @@ public class PlatformController : MonoBehaviour
                 {
                     if (i == currentIndex)
                     {
-                        // Color amarillo para el aro seleccionado
+                        // Color gris para el aro seleccionado
                         materials[j].color = Color.grey;
                     }
                     else
@@ -101,8 +101,6 @@ public class PlatformController : MonoBehaviour
             aros[currentIndex].transform.Rotate(Vector3.up * direction * rotationSpeed * Time.deltaTime);
         }
     }
-
-
 }
 
 

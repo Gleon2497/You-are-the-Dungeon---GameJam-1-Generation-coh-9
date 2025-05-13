@@ -12,11 +12,6 @@ public class SpawnFriend : MonoBehaviour
         InvokeRepeating("SpawnPrefabEnemies", startDelay, repeatRate);
     }
 
-    void Update()
-    {
-
-    }
-
     void SpawnPrefabEnemies()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-spawnPosX, spawnPosX), 0, spawnPosZ);
