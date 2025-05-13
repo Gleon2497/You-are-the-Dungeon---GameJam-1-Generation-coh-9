@@ -35,7 +35,7 @@ public class PlatformController : MonoBehaviour
     void Update()
     {
         // seleccion de aros
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if (currentIndex < aros.Count - 1)
             {
@@ -44,7 +44,7 @@ public class PlatformController : MonoBehaviour
                 AudioManager.Instance.PlaySFX(changeRingSound);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             if (currentIndex > 0)
             {
@@ -55,11 +55,11 @@ public class PlatformController : MonoBehaviour
         }
 
         // Rotación del aro seleccionado
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             RotateSelectedAro(-1); // sentido del reloj
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A))
         {
             RotateSelectedAro(1); // sentido contrario al reloj
         }
@@ -78,7 +78,7 @@ public class PlatformController : MonoBehaviour
                 {
                     if (i == currentIndex)
                     {
-                        // Color amarillo para el aro seleccionado
+                        // Color gris para el aro seleccionado
                         materials[j].color = Color.grey;
                     }
                     else
@@ -89,8 +89,6 @@ public class PlatformController : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("Aro seleccionado: #" + (currentIndex + 1));
     }
 
     // Rota el aro actualmente seleccionado en el eje Y
@@ -101,8 +99,6 @@ public class PlatformController : MonoBehaviour
             aros[currentIndex].transform.Rotate(Vector3.up * direction * rotationSpeed * Time.deltaTime);
         }
     }
-
-
 }
 
 

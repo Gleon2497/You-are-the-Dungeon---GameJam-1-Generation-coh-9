@@ -37,7 +37,7 @@ public class TimeController : MonoBehaviour
                 minutes = 0;
                 seconds = 0;
             }
-            timeText.text = string.Format(" Time: {0:0} : {1:00}", minutes, seconds);
+            timeText.text = string.Format(" TIME: {0:0} : {1:00}", minutes, seconds);
         }
 
 
