@@ -45,12 +45,16 @@ En este juego, eres el sistema digestivo de un dragón. Tu misión es protegerlo
 - Gustavo Leon: **3D Artist, Technical Artist**
 
 ## 📷 Capturas
-
-![Screenshot](./screenshots/Screenshot5.png)
-![Screenshot](./screenshots/Screenshot4.png)
-![Screenshot](./screenshots/Screenshot1.png)
-![Screenshot](./screenshots/Screenshot2.png)
-![Screenshot](./screenshots/Screenshot3.png)
+### 👥 Equipo de trabajo
+![Equipo de trabajo](./screenshots/Screenshot5.png)
+### 🧭 Menú principal
+![Menú principal](./screenshots/Screenshot4.png)
+### 🎮 Controles
+![Controles del juego](./screenshots/Screenshot1.png)
+### 🐉 Vista del juego
+![Gameplay](./screenshots/Screenshot2.png)
+### ☠️ Pantalla de derrota
+![Game Over](./screenshots/Screenshot3.png)
 
 ## ✅ Estado
 
