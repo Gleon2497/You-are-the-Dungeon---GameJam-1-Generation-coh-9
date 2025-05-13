@@ -1,65 +1,65 @@
 # 🐉 Protect Your Dragon
 
-**Protect Your Dragon** es un videojuego de defensa arcade creado en Unity durante una Game Jam en un tiempo estimado de 48-72 horas.
+**Protect Your Dragon** is an arcade defense video game created in Unity during a Game Jam in an estimated time of 48-72 hours.
 
-🎮 **Juega ahora en Itch.io:** [https://spielwiss.itch.io/protect-your-dragon](https://spielwiss.itch.io/protect-your-dragon)
+🎮 **Play now on Itch.io:** [https://spielwiss.itch.io/protect-your-dragon](https://spielwiss.itch.io/protect-your-dragon)
 
-## 🧠 Descripción
+## 🧠 Description
 
-En este juego, eres el sistema digestivo de un dragón. Tu misión es protegerlo de bacterias invasoras que amenazan con debilitarlo desde dentro. Gira anillos concéntricos para dejar pasar aliados nutritiva y bloquear las bacterias antes de que lleguen al núcleo.
+In this game, you are the digestive system of a dragon. Your mission is to protect it from invading bacteria that threaten to weaken it from the inside. Rotate concentric rings to let nutritious allies pass through and block bacteria before they reach the core.
 
-### Características principales
+### Main features
 
-- 🎯 Mecánica única de defensa girando anillos internos.
-- ⚔️ Dilema constante entre dejar pasar aliados o bloquear enemigos.
-- 🧪 Estética orgánica, caricaturesca y grotesca.
-- ⏱️ Enfoque de superación personal: sobrevive el mayor tiempo posible.
+- 🎯 Unique defense mechanics by rotating internal rings.
+- ⚔️ Constant dilemma between letting allies pass or blocking enemies.
+- 🧪 Organic, cartoonish and grotesque aesthetics.
+- ⏱️ Self-improvement approach: survive as long as possible.
 
-## 🕹️ Controles
+## 🕹️ Controls
 
-- **WASD**: Rotar los anillos digestivos.
-- **Mouse**: Interfaz y selección en menú.
+- **WASD**: Rotate the digestive rings.
+- **Mouse**: Interface and menu selection.
 
-## 🧩 Mecánicas
+## 🧩 Mechanics
 
-- **Rotación 360° de anillos:** Alinea secciones seguras para dejar pasar alimentos o zonas de daño para eliminar bacterias.
-- **Oleadas dinámicas:** Bacterias y Aliados aparecen aleatoriamente, creando desafíos constantes.
-- **Vida del dragón:** Permite el paso de aliados para regenerarla y bloquea bacterias para evitar perderla.
+- **360° ring rotation:** Aligns safe sections to let food pass through or damage zones to eliminate bacteria.
+- **Dynamic Surges:** Bacteria and Allies appear randomly, creating constant challenges.
+- **Dragon Life:** Allows allies to pass through to regenerate it and blocks bacteria to avoid losing it.
 
-## 📦 Requisitos
+## 📦 Requirements
 
-- **Motor:** Unity
-- **Plataforma de publicación:** Web (Itch.io)
-- **Controles:** Teclado
+- **Engine:** Unity
+- **Platform:** Web (Itch.io)
+- **Controls:** TKeyboard
 
-## 🖼️ Estilo visual y sonoro
+## 🖼️ Visual and sound style
 
-- **Arte:** Estética cartoon con un toque grotesco suave. Colores internos viscerales con contrastes brillantes en alimentos y enemigos.
-- **Audio:** Marimbas, xilófonos y sonidos viscosos para reforzar el ambiente digestivo fantástico.
+- **Art:** Cartoon aesthetics with a soft grotesque touch. Visceral internal colors with bright contrasts in food and enemies.
+- **Audio:** Marimbas, xylophones and slimy sounds to reinforce the fantastic digestive environment.
 
-## 👥 Créditos
+## 👥 Credits
 
 - Juanita Garcia: **Developer, Music**
 - Christian Garzon: **Developer, Project Manager**
 - Cindy Monroy: **2D Artist, Animation, UI**
 - Gustavo Leon: **3D Artist, Technical Artist**
 
-## 📷 Capturas
-### 👥 Equipo de trabajo
+## 📷 Screenshots
+### 👥 Team
 ![Equipo de trabajo](./screenshots/Screenshot5.png)
-### 🧭 Menú principal
+### 🧭 Main Menu
 ![Menú principal](./screenshots/Screenshot4.png)
-### 🎮 Controles
+### 🎮 Controls
 ![Controles del juego](./screenshots/Screenshot1.png)
-### 🐉 Vista del juego
+### 🐉 Gameplay
 ![Gameplay](./screenshots/Screenshot2.png)
-### ☠️ Pantalla de derrota
+### ☠️ Gameover screen
 ![Game Over](./screenshots/Screenshot3.png)
 
-## ✅ Estado
+## ✅ Status
 
-Proyecto finalizado para la Game Jam. Disponible en versión web.
+Finished project for the Game Jam. Available in web version.
 
 ---
 
-¡Gracias por jugar y proteger a tu dragón!
+Thank you for playing and protecting your dragon!
