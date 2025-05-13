@@ -10,12 +10,6 @@ public class Manager_Level : MonoBehaviour
         life = 10;
     }
 
-
-    void Update()
-    {
-        
-    }
-
     public void Damage()
     {
         life -= 1;

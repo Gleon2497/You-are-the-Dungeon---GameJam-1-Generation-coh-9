@@ -183,3 +183,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerPoint: {fileID: 0}
   speed: 3
+  friendInVoidSound: {fileID: 8300000, guid: 97f296ac33b8cd44bb35bc503757a6e1, type: 3}
