@@ -6,12 +6,12 @@
 
 ## 🧠 Descripción
 
-En este juego, eres el sistema digestivo de un dragón. Tu misión es protegerlo de bacterias invasoras que amenazan con debilitarlo desde dentro. Gira anillos concéntricos para dejar pasar comida nutritiva y bloquear las bacterias antes de que lleguen al núcleo.
+En este juego, eres el sistema digestivo de un dragón. Tu misión es protegerlo de bacterias invasoras que amenazan con debilitarlo desde dentro. Gira anillos concéntricos para dejar pasar aliados nutritiva y bloquear las bacterias antes de que lleguen al núcleo.
 
 ### Características principales
 
 - 🎯 Mecánica única de defensa girando anillos internos.
-- ⚔️ Dilema constante entre dejar pasar comida o bloquear enemigos.
+- ⚔️ Dilema constante entre dejar pasar aliados o bloquear enemigos.
 - 🧪 Estética orgánica, caricaturesca y grotesca.
 - ⏱️ Enfoque de superación personal: sobrevive el mayor tiempo posible.
 
@@ -23,8 +23,8 @@ En este juego, eres el sistema digestivo de un dragón. Tu misión es protegerlo
 ## 🧩 Mecánicas
 
 - **Rotación 360° de anillos:** Alinea secciones seguras para dejar pasar alimentos o zonas de daño para eliminar bacterias.
-- **Oleadas dinámicas:** Bacterias y comida aparecen aleatoriamente, creando desafíos constantes.
-- **Vida del dragón:** Permite el paso de comida para regenerarla y bloquea bacterias para evitar perderla.
+- **Oleadas dinámicas:** Bacterias y Aliados aparecen aleatoriamente, creando desafíos constantes.
+- **Vida del dragón:** Permite el paso de aliados para regenerarla y bloquea bacterias para evitar perderla.
 
 ## 📦 Requisitos
 
