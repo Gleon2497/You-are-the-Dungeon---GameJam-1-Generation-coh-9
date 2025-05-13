@@ -455,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerPoint: {fileID: 0}
   speed: 2
+  enemyOnVoidSound: {fileID: 8300000, guid: 5c8e8fc23a60cc54f87541c4f0bf572c, type: 3}
 --- !u!54 &2706856846609791706
 Rigidbody:
   m_ObjectHideFlags: 0
