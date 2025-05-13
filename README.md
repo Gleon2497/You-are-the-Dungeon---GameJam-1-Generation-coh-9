@@ -46,8 +46,8 @@ En este juego, eres el sistema digestivo de un dragón. Tu misión es protegerlo
 
 ## 📷 Capturas
 
-![Screenshot](./screenshots/screen1.png)
-![Screenshot](./screenshots/screen2.png)
+![Screenshot](./screenshots/Screenshot1.png)
+![Screenshot](./screenshots/Screenshot2.png)
 
 ## ✅ Estado
 
